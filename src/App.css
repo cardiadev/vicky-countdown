@@ -6,8 +6,14 @@
   background-color: #eeeeee;
   color: #373737;
 }
-#container {
 
+.fade-in {
+  animation: fadeIn 400ms ease-in;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @media (max-width: 767px) {

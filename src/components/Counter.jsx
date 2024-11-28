@@ -1,18 +1,32 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
 import Timers from './Timers';
 import Over from './Over';
+import { PuffLoader } from 'react-spinners';
 
 const Counter = ({ date }) => {
-
-    const [countdown, setCountdown] = useState(new Date(date).getTime());
+    const [countdown, setCountdown] = useState(null);
     const [days, setDays] = useState(0);
     const [hours, setHours] = useState(0);
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(0);
     const [isFinished, setIsFinished] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
+        // Set initial countdown value
+        const targetTime = new Date(date).getTime();
+        setCountdown(targetTime);
+    }, [date]);
+
+    useEffect(() => {
+        if (countdown === null) return;
+
+        // Simulate a delay before loading the timer
+        const loadingTimeout = setTimeout(() => {
+            setIsLoading(false);
+        }, 1500);
+
         const startCountdown = () => {
             const interval = setInterval(() => {
                 const now = new Date().getTime();
@@ -39,7 +53,9 @@ const Counter = ({ date }) => {
         };
 
         startCountdown();
-    }, []);
+
+        return () => clearTimeout(loadingTimeout);
+    }, [countdown]);
 
     useEffect(() => {
         if (isFinished) {
@@ -62,17 +78,19 @@ const Counter = ({ date }) => {
         }
     }, [isFinished]);
 
-
     return (
         <div>
-            {isFinished ? (
-                <Over />
+            {isLoading ? (
+                <div className='flex items-center justify-center h-screen'>
+                    <PuffLoader color={'#808080'} loading={isLoading} size={100} />
+                </div>
+            ) : isFinished ? (
+                <div className='fade-in'><Over /></div>
             ) : (
-                <Timers days={days} hours={hours} minutes={minutes} seconds={seconds} />
-
+                <div className='fade-in'><Timers days={days} hours={hours} minutes={minutes} seconds={seconds} /></div>
             )}
         </div>
-    )
+    );
 }
 
-export default Counter
+export default Counter;

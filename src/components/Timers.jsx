@@ -19,9 +19,9 @@ const Timers = ({ days, hours, minutes, seconds }) => {
                 
 
                 <div class="flex flex-col items-center justify-center text-center">
-                    <p className='text-4xl font-semibold'> Vicky en México</p>
-                    <p className='text-2xl font-semibold my-4'> 🇨🇴  ✈️ 🇲🇽</p>
-                    <p className='text-xl font-semibold'> 20 de Mayo 2023</p>
+                    <p className='mb-12 text-5xl font-semibold'> Vicky en México</p>
+                    <p className='my-4 mb-12 text-5xl font-semibold'> 🇨🇴  ✈️ 🇲🇽</p>
+                    <p className='text-2xl font-semibold'> 01 de Diciembre 2024</p>
                 </div>
 
 
@@ -49,10 +49,10 @@ const Timers = ({ days, hours, minutes, seconds }) => {
 
                 <div class="flex items-center justify-center text-center ">
                     <div className="flex items-center justify-center text-center">
-                        <button className="bg-green-500 flex items-center justify-center text-center hover:bg-green-600 transition duration-800 text-white py-3 px-4 rounded-lg" onClick={enviarMensaje}>
+                        <button className="flex items-center justify-center px-4 py-3 text-center text-white transition bg-green-500 rounded-lg hover:bg-green-600 duration-800" onClick={enviarMensaje}>
 
                             <FaWhatsapp size={36}/>
-                            <p className='text-lg ml-2'>Recordarle por WhatsApp</p>
+                            <p className='ml-2 text-lg'>Recordarle por WhatsApp</p>
 
                         </button>
                     </div>

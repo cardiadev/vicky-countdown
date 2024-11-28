@@ -11,11 +11,11 @@ const Over = () => {
 
   return (
     <div className='flex flex-col items-center justify-center h-screen font-semibold text-center'>
-      <p className='mb-12 text-5xl'>"El tiempo ha valido la pena"</p>
-      <p className='mb-12 text-5xl'>♥️    Te Amo    ♥️</p>
+      <p className='mb-12 text-5xl font-bold leading-relaxed'>"Cada segundo que pasé esperándote fue un paso hacia la felicidad, el tiempo voló, pero mi amor por ti siempre estuvo presente"</p>
+      <p className='mb-12 text-5xl'>♥️    Te Amo Preciosa    ♥️</p>
       <p className='mb-12 text-4xl'>Te veo en México</p>
       <p className='mb-12 text-5xl'>🇨🇴 😘 🇲🇽</p>
-      <p className='text-3xl'>20 de Mayo 2023</p>
+      <p className='text-3xl'>01 de Diciembre 2024</p>
 
       <div class="flex items-center justify-center text-center mt-20">
         <div className="flex items-center justify-center text-center">
